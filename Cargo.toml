@@ -2,8 +2,10 @@
 name = "mappi"
 version = "0.1.0"
 edition = "2021"
+license = "GPL-3.0"
 
 [features]
+dynamic_linking = ["bevy/dynamic_linking"]
 debug = ["bevy/detailed_trace"]
 
 [dependencies]

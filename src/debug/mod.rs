@@ -1,5 +1,3 @@
-mod logging;
-
 use bevy::{
     app::PluginGroupBuilder,
     prelude::{App, PluginGroup},

@@ -1,3 +1,4 @@
+/// Most of this code is copied straight from the official bevy_log plugin
 use std::panic;
 
 use bevy::prelude::{App, Plugin};
@@ -23,7 +24,7 @@ impl Plugin for LogPlugin {
             .or_else(|_| EnvFilter::try_new(&default_filter))
             .unwrap();
 
-        // Wait, safety? Whats that?
+        // In practice, there should never be another bevy plugin/thread/whatever writing to env during this step, so this "should" be "safe"
         unsafe {
             time::util::local_offset::set_soundness(time::util::local_offset::Soundness::Unsound);
         }
